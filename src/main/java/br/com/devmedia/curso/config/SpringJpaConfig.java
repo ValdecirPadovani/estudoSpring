@@ -16,17 +16,17 @@ import java.util.Properties;
 public class SpringJpaConfig {
 
     @Bean
-    public DataSource dataSource(){
+    public DataSource dataSource() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("com.mysql.jdbc.Driver");
-        ds.setUrl("jdbc:mysql://localhost:3306/teste?createDataBaseIfNotExist=true");
+        ds.setUrl("jdbc:mysql://localhost:3306/test?createDatabaseIfNotExist=true");
         ds.setUsername("root");
-        ds.setPassword("root");
+        ds.setPassword("cizim");
         return ds;
     }
 
     @Bean
-    public EntityManagerFactory entityManagerFactory(){
+    public EntityManagerFactory entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setDataSource(dataSource());
         factory.setPackagesToScan("br.com.devmedia.curso.domain");
@@ -34,7 +34,6 @@ public class SpringJpaConfig {
         factory.setJpaProperties(jpaProperties());
         factory.afterPropertiesSet();
         return factory.getObject();
-
     }
 
     @Bean

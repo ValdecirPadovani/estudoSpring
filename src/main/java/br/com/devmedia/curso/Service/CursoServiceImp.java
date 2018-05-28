@@ -49,7 +49,7 @@ public class CursoServiceImp implements CursoService{
     /*
         Não precisa de usar o update do dao, pois o estado do objeto é Transiente
         Nesse caso ao usar o setDataInicio, ja será feio o update no banco
-     */
+    */
     public Curso updateDataInicio(Long id, Date dataInicio) {
         Curso curso = dao.findById(id);
         curso.setDataInicio(dataInicio);
