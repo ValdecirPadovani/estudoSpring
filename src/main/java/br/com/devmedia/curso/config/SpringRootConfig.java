@@ -10,6 +10,4 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableTransactionManagement
 @ComponentScan("br.com.devmedia.curso")
 public class SpringRootConfig {
-
-
 }

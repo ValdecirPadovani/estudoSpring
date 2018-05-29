@@ -4,11 +4,13 @@ import br.com.devmedia.curso.domain.Curso;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
 public class CursoDaoImp implements CursoDao{
 
+    @PersistenceContext
     private EntityManager entityManager;
 
     @Override

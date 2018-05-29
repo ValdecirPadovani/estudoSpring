@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum CargaHoraria {
 
-    VINTE_HORAS("20HRS"), TRINTA_HORAS("30HRS"), QUARENTA_HORAS("40HRS"),SESSENTA_HORAS("60HRS");
+    VINTE_HORAS("20HS"),TRINTA_HORAS("30HRS"), QUARENTA_HORAS("40HRS"),SESSENTA_HORAS("60HRS");
 
     private String horas;
 
