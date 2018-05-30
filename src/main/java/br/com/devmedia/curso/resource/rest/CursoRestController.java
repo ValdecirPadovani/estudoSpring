@@ -23,6 +23,31 @@ public class CursoRestController {
     @Autowired
     private CursoService service;
 
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void excluir(@PathVariable Long id){
+        service.delete(id);
+    }
+
+    @PatchMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Curso editarDataInicio(@PathVariable("id") Long id, @RequestBody Curso curso){
+        return service.updateDataInicio(id, curso.getDataInicio());
+    }
+
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Curso updateCuros(@PathVariable("id") Long id, @RequestBody Curso curso){
+        service.update(id, curso);
+        return curso;
+    }
+
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Curso getCurso(@PathVariable("id") Long id){
+        return service.findByid(id);
+    }
+
     @PostMapping
     public ResponseEntity<Void> salvar(@RequestBody Curso curso){
 
